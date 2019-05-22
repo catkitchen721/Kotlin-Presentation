@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val bldr = AlertDialog.Builder(this@MainActivity)
+        val bldr = AlertDialog.Builder(this@MainActivity)   // Message Box
         bldr.setTitle("Game Start")
         bldr.setMessage("1p or 2p?")
         bldr.setPositiveButton("1p") {
@@ -61,8 +61,7 @@ class MainActivity : AppCompatActivity() {
         }
         playGame(cellID,buSelected)
         if(isWin){
-            //Thread.sleep(1000)
-            val bldr = AlertDialog.Builder(this@MainActivity)
+            val bldr = AlertDialog.Builder(this@MainActivity)   // Message Box
             bldr.setTitle("Congratulations! ${if(winner == 1) "Player 1" else if(winner == 2) "Player 2" else "NoBody"} is win!")
             bldr.setMessage("Replay?")
             bldr.setPositiveButton("Sure") {
@@ -72,8 +71,6 @@ class MainActivity : AppCompatActivity() {
             val dilg: AlertDialog = bldr.create()
             dilg.setCancelable(false)
             dilg.show()
-            //refresh()
-
 
             isWin = false
         }
@@ -253,9 +250,5 @@ class MainActivity : AppCompatActivity() {
             }
             playGame(cellID, buSelected)
         }
-        /*else{
-            Toast.makeText(this," Game ended in a tie", Toast.LENGTH_LONG).show()
-            refresh()
-        }*/
     }
 }
